@@ -26,7 +26,8 @@ class BooksController < ApplicationController
   def create
    @params = params 
 
-   @book = Book.new(params.require(:books).permit(:title, :sales, :published, :genre)) 
+   @book = Book.new(params.require(:book).permit(:title, :sales, :published, :genre)) 
+   
    @book.save
 
    render 'new' 
